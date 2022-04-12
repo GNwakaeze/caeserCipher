@@ -1,42 +1,42 @@
-def caeser_cipher(string, num)
-    newAr = []
+def caeser_cipher(string, number)
+    encrypted_string = []
     string_to_downcase_array = string.downcase.split('')
     for letter in string_to_downcase_array
         if !letter.match?(/[A-Z]/i)
-            newAr.push(letter)
+            encrypted_string.push(letter)
             next
         elsif letter.match?(/[A-Z]/i)
-            if (letter.ord + num) > 122
-                letter = ((letter.ord + num) - 26).chr
-            elsif (letter.ord + num) < 97
-                letter = ((letter.ord + num) + 26).chr
-            else letter = (letter.ord + num).chr
+            if (letter.ord + number) > 122
+                letter = ((letter.ord + number) - 26).chr
+            elsif (letter.ord + number) < 97
+                letter = ((letter.ord + number) + 26).chr
+            else letter = (letter.ord + number).chr
             end
         end
-        newAr.push(letter)
+        encrypted_string.push(letter)
     end
-    newAr.join('')
+    encrypted_string.join('')
 end 
 p caeser_cipher("What a string!", 5) 
 
 
-def caeser_decipher(string, num)
-    newAr = []
+def caeser_decipher(string, number)
+    encrypted_string = []
     string_to_downcase_array = string.downcase.split('')
     for letter in string_to_downcase_array
         if !letter.match?(/[A-Z]/i)
-            newAr.push(letter)
+            encrypted_string.push(letter)
             next
         elsif letter.match?(/[A-Z]/i)
-            if (letter.ord - num) > 122
-                letter = ((letter.ord - num) - 26).chr
-            elsif (letter.ord - num) < 97
-                letter = ((letter.ord - num) + 26).chr
-            else letter = (letter.ord - num).chr
+            if (letter.ord - number) > 122
+                letter = ((letter.ord - number) - 26).chr
+            elsif (letter.ord - number) < 97
+                letter = ((letter.ord - number) + 26).chr
+            else letter = (letter.ord - number).chr
             end
         end
-        newAr.push(letter)
+        encrypted_string.push(letter)
     end
-    newAr.join('')
+    encrypted_string.join('')
 end 
 p caeser_decipher("bmfy f xywnsl!", 5) 
